@@ -5,7 +5,7 @@ import csv
 
 class Scraper:
 
-    def __init__(self, query: str, num_of_pages: int):
+    def __init__(self, query: str, num_of_pages: int) -> None:
         self._query = query
         self._num_of_pages = num_of_pages
 
@@ -41,7 +41,7 @@ class Scraper:
         self.create_data_set(output.values())
 
     def create_data_set(self, arr_data):
-        with open('fetched_data.csv', 'w', encoding='cp1251', errors='ignore') as file:
+        with open('fetched_data.csv', 'w', encoding='cp1251', errors='replace') as file:
             writer = csv.writer(file)
             writer.writerows(arr_data)
 

@@ -10,7 +10,7 @@ class AgentsSearch:
         self._user_request = user_request.lower()
 
     def search(self):
-        scraper = Scraper(self._user_request, 1000)
+        scraper = Scraper(self._user_request, 5000)
         results = scraper.get_results()
         parsed_data = scraper.parse_results(results)
         semantic_search = TensorSemanticSearch()
